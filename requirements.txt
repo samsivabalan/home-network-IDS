@@ -1,0 +1,8 @@
+pandas
+scikit-learn
+joblib
+flask
+requests
+notebook
+suricata
+tcpdump
