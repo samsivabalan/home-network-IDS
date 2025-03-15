@@ -41,4 +41,4 @@ echo "Finishing Suricata installation, including its rules..."
 sudo make install-full
 
 echo "Updating Suricata's rules..."
-suda suricata-update
+sudo suricata-update
