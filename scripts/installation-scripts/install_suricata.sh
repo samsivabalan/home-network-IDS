@@ -1,8 +1,5 @@
 #!/bin/bash
 
-echo "Updating the system..."
-sudo apt-get update && sudo apt-get upgrade -y
-
 echo "Installing required packages..."
 sudo apt-get install -y python-pip libnss3-dev liblz4-dev libnspr4-dev libcap-ng-dev git
 
