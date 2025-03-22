@@ -1,19 +1,18 @@
 #!/bin/bash
 
-echo "Installing required packages..."
-sudo apt-get install -y python-pip libnss3-dev liblz4-dev libnspr4-dev libcap-ng-dev git
-
-echo "Installing Suricata dependencies..."
-sudo apt install -y libpcre3 libpcre3-dbg libpcre3-dev build-essential libpcap-dev libyaml-0-2 libyaml-dev pkg-config zlib1g zlib1g-dev make libmagic-dev libjansson-dev rustc cargo python-yaml python3-yaml liblua5.1-dev
+echo "Installing necessary dependencies..."
+sudo apt install libpcre3 libpcre3-dbg libpcre3-dev build-essential libpcap-dev libyaml-0-2 libyaml-dev pkg-config zlib1g zlib1g-dev make libmagic-dev libjansson-dev rustc cargo python-yaml python3-yaml liblua5.1-dev
 
 echo "Downloading Suricata source code..."
 wget https://www.openinfosecfoundation.org/download/suricata-6.0.10.tar.gz
 
 echo "Extracting Suricata..."
 tar -xvf suricata-6.0.10.tar.gz
+
+echo "Entering Suricata directory..."
 cd suricata-6.0.10
 
-echo "Configuring Suricata..."
+echo "Configuring installation..."
 ./configure --prefix=/usr --sysconfdir=/etc --localstatedir=/var --enable-nfqueue --enable-lua
 
 echo "Compiling Suricata..."
@@ -36,6 +35,3 @@ cd ..
 
 echo "Finishing Suricata installation, including its rules..."
 sudo make install-full
-
-echo "Updating Suricata's rules..."
-sudo suricata-update
