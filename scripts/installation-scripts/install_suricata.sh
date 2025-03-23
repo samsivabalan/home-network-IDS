@@ -4,13 +4,13 @@ echo "Installing necessary dependencies..."
 sudo apt install libpcre3 libpcre3-dbg libpcre3-dev build-essential libpcap-dev libyaml-0-2 libyaml-dev pkg-config zlib1g zlib1g-dev make libmagic-dev libjansson-dev rustc cargo python-yaml python3-yaml liblua5.1.0-dev
 
 echo "Downloading Suricata source code..."
-wget https://www.openinfosecfoundation.org/download/suricata-6.0.10.tar.gz
+wget https://www.openinfosecfoundation.org/download/suricata-7.0.9.tar.gz
 
 echo "Extracting Suricata..."
-tar -xvf suricata-6.0.10.tar.gz
+tar -xvf suricata-7.0.9.tar.gz
 
 echo "Entering Suricata directory..."
-cd suricata-6.0.10
+cd suricata-7.0.9
 
 echo "Configuring installation..."
 ./configure --prefix=/usr --sysconfdir=/etc --localstatedir=/var --enable-nfqueue --enable-lua
