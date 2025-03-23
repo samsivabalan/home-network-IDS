@@ -4,7 +4,7 @@ echo "Updating the system..."
 sudo apt-get update && sudo apt-get upgrade -y
 
 echo "Installing necessary dependencies..."
-sudo apt install libpcre3 libpcre3-dbg libpcre3-dev build-essential libpcap-dev libyaml-0-2 libyaml-dev pkg-config zlib1g zlib1g-dev make libmagic-dev libjansson-dev rustc cargo python-yaml python3-yaml liblua5.1-dev
+sudo apt install -y libpcre3 libpcre3-dbg libpcre3-dev build-essential libpcap-dev libyaml-0-2 libyaml-dev pkg-config zlib1g zlib1g-dev make libmagic-dev libjansson-dev rustc cargo python3-yaml liblua5.1-dev
 
 echo "Downloading Suricata source code..."
 wget https://www.openinfosecfoundation.org/download/suricata-7.0.9.tar.gz
